@@ -1,0 +1,12 @@
+<% include partials/header %>
+
+<form action="/books/<%= book._id %>?_method=PUT" method="POST">
+    <input type="text" value="<%= book.name %>" name="book[name]"><br>
+    <input type="text" value="<%= book.image %>" name="book[image]"><br>
+    <textarea name="book[desc]">
+        <%= book.desc %>
+    </textarea><br>
+    <button type="submit">Submit</button>
+</form>
+
+<% include partials/footer %>

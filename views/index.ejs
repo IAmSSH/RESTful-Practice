@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<h1 id="index-header" class="ui very padded text container">Blogs</h1>
+<div>
+    <% books.forEach(function(book) { %>
+        <div class="ui raised very padded text container segment">
+            <h3><%= book.name %></h3>
+            <img src="<%= book.image %>" alt="bookImage" class="ui small left floated rounded image"><span><%= book.readOn %></span>
+            <p><%= book.desc.substring(0, 20) %>...</p>
+            <form action="/books/<%= book._id %>" method="GET">
+                <button class="ui right labeled icon button">
+                    <i class="right arrow icon"></i>
+                    Read More
+                </button>
+            </form>
+            <div class="ui horizontal divider"></div>
+        </div>
+    <% }); %>
+</div>
+
+<% include partials/footer %>
